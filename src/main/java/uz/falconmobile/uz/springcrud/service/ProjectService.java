@@ -32,7 +32,35 @@ public class ProjectService {
     }
 
 
-    public void addProduct(Product product){
+    public void addProduct(Product product) {
         products.add(product);
+    }
+
+    public void updateProduct(Product product) {
+
+        int index = 0;
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getProdId() == product.getProdId()) {
+
+                index = i;
+
+            }
+
+        }
+
+        products.set(index, product);
+
+    }
+
+    public void deleteProduct(int id) {
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getProdId() == id) {
+
+                products.remove (products.get(i));
+
+            }
+
+        }
+
     }
 }
